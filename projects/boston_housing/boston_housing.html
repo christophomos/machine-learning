@@ -11802,7 +11802,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11812,7 +11812,7 @@ div#notebook {
 
 <span class="kn">import</span> <span class="nn">sklearn</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">sklearn</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;sklearn version: &quot;</span> <span class="o">+</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 
 <span class="c1"># Import supplementary visualizations code visuals.py</span>
 <span class="kn">import</span> <span class="nn">visuals</span> <span class="k">as</span> <span class="nn">vs</span>
@@ -11843,7 +11843,7 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.19.1
+<pre>sklearn version: 0.19.1
 Boston housing dataset has 489 data points with 4 variables each.
 </pre>
 </div>
@@ -11855,7 +11855,7 @@ Boston housing dataset has 489 data points with 4 variables each.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">features</span><span class="o">.</span><span class="n">columns</span>
@@ -11871,7 +11871,7 @@ Boston housing dataset has 489 data points with 4 variables each.
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[66]:</div>
+<div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -11914,23 +11914,26 @@ Boston housing dataset has 489 data points with 4 variables each.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Prices as numpy array</span>
+<span class="n">prices_np</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Minimum price of the data</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices_np</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices_np</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices_np</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices_np</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices_np</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -11961,7 +11964,7 @@ Minimum price: $105000.0
 Maximum price: $1024800.0
 Mean price: $454342.9447852761
 Median price $438900.0
-Standard deviation of prices: $165340.27765266784
+Standard deviation of prices: $165171.13154429474
 </pre>
 </div>
 </div>
@@ -12000,7 +12003,105 @@ Standard deviation of prices: $165340.27765266784
 <li>I would expect that a home with RM = 6 would tend to have a lesser value than one with an RM of 7, because number of rooms is correlated with size, and I would expect larger homes to have a higher value.</li>
 <li>I would expect a home with an LSTAT of 15 to have a greater value that one with an LSTAT of 20, since I would think that the higher percentage of working poor in the neihborhood, the lower the house priced would be.</li>
 <li>I would suspect that a home in a neighborhood of PTRATIO would have a 10 would have a higher price than one in a neihborhood of PTRATIO 15, since too high of a ratio might indicate a neighborhood that teachers find disagreeable to live. On the other, teachers might be priced out of too expensive of a neighborhood.</li>
+<li>Now that I've used my intuition, I'll check out the correlation (Pearson's r) using pandas:</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>RM</th>
+      <th>LSTAT</th>
+      <th>PTRATIO</th>
+      <th>MEDV</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>RM</th>
+      <td>1.000000</td>
+      <td>-0.612033</td>
+      <td>-0.304559</td>
+      <td>0.697209</td>
+    </tr>
+    <tr>
+      <th>LSTAT</th>
+      <td>-0.612033</td>
+      <td>1.000000</td>
+      <td>0.360445</td>
+      <td>-0.760670</td>
+    </tr>
+    <tr>
+      <th>PTRATIO</th>
+      <td>-0.304559</td>
+      <td>0.360445</td>
+      <td>1.000000</td>
+      <td>-0.519034</td>
+    </tr>
+    <tr>
+      <th>MEDV</th>
+      <td>0.697209</td>
+      <td>-0.760670</td>
+      <td>-0.519034</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Answer (continued):</strong></p>
+<p>So there is a positive correlation between RM and MEDV (0.70) and a negative correlation between LSTAT and MEDV (-0.76). There is a negative correlation between PTRATIO and MEDV, but at -0.519, it is weaker than the other two.</p>
 
 </div>
 </div>
@@ -12150,6 +12251,9 @@ Standard deviation of prices: $165340.27765266784
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong>
 R2 = 0.923 is certainly promising, but since the testing set is so small, it is difficult to give any definitive answers yet concerning the value of the model.</p>
+<p>But even though the statistic is suspect because of the small sample size, 0.923 indicates that a model captures the variation of the data effectively. R2 can take on values between 0 and 1 and is calculated as follows:</p>
+<p>R2 = explained variation / total variation</p>
+<p>Thus it appears that our model encapsulates about 92% of the variation in the data. But even at 92%, we should still search for further variables that could help explain the remaining 8% of the variation, since that could give our model more predictive power. This is especially true if we have only just because exploring the data - we'd like to get the R2 score even closer to 1, if possible.</p>
 
 </div>
 </div>
@@ -12227,6 +12331,8 @@ R2 = 0.923 is certainly promising, but since the testing set is so small, it is 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <p>Splitting data into testing and training data is most important for avoiding overfitting. You can catch underfitting since models with high bias perform poorly on training as well as testing sets. But a model with high variation may perform excellently on the data it was trained on - it is critical to have a testing set to ensure that the model hasn't simply memorized the training data; that would be overfitting.</p>
+<p>But it is critical to keep in mind that splitting data isn't the only answer for how we can avoid underfitting or overfitting. We need a set of data that is representative of the data that we will be applying our model to in the future. For instance, no matter how much 1978 housing data we have, we might immediately suspect that it doesn't apply to the current market, now 40 years later.</p>
+<p>And exactly how the splitting is done is critical. We must take a random sampling of the data so that both the training and testing sets are equally representative of the data, and we must not peek at the testing data - it should only be used to evaluate our final model.</p>
 
 </div>
 </div>
@@ -12402,6 +12508,7 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <p>The maximum depth I would choose is 4. The score on the validation is slightly better on testing data than with a depth of 3 and the training and validation scores don't diverge much more than at depth = 3.</p>
+<p>In general, if our model suffers from too much bias, we should attempt to increase model complexity, and if it suffers from too much variation, we should decrease complexity.</p>
 
 </div>
 </div>
@@ -12434,7 +12541,9 @@ Think about the pros and cons of adding more training points based on if the tra
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>We use grid search to select between different choices of hyperparameters. This is something that training a model won't do for us; training the model only gives us a resulting set of parameters. For instance, with linear regression, training a model will give us a resulting set of coefficients for our polynomial (parameters), but it will not tell us the degree of the polynomial (a hyper-parameter). So we use grid search to try out all the combinations of hyper-parameters that we're interested in, then use our cross-validation data to choose which combination is best.</p>
+<p>We use grid search to select between different choices of hyperparameters. This is something that training a model won't do for us; training the model only gives us a resulting set of parameters.</p>
+<p>For instance, with linear regression, training a model will give us a resulting set of coefficients for our polynomial (parameters), but it will not tell us the degree of the polynomial (a hyper-parameter). So we use grid search to try out all the combinations of hyper-parameters that we're interested in, then use our cross-validation data to choose which combination is best.</p>
+<p>So each cell in our grid corresponds to a degree of polynomial, such as 1, 2 or 3. When we execute the grid search, we'll get a model corresponding to each cell in the grid. We then select the best model using the cross-validation data, attempting to avoid high bias (in this case, too low of a degree) and high variation (too high of a degree).</p>
 
 </div>
 </div>
